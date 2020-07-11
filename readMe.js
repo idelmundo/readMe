@@ -42,12 +42,13 @@ function userInputs() {
         .then((work) => {
             console.log(work);
             var generate = `
-        
-  ## Project title: ${work.title}
+   
+  ## Table Of Contents:* [Description](#description)
+  * [Installation](#installation)
+            
+  ### Project title: ${work.title}
   
   ## Description: ${work.description}
-  
-  ### Table of Contents: 
   
   ## Installation: ${work.install}
   
@@ -69,28 +70,28 @@ function userInputs() {
         })
 }
 
-inquirer
-    .prompt({
-        message: "Enter your GitHub username:",
-        name: "username"
-    })
-    .then(function({ username }) {
-        const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+// inquirer
+//     .prompt({
+//         message: "Enter your GitHub username:",
+//         name: "username"
+//     })
+//     .then(function({ username }) {
+//         const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
 
-        axios.get(queryUrl).then(function(res) {
-            const repoNames = res.data.map(function(repo) {
-                return repo.name;
-            });
+//         axios.get(queryUrl).then(function(res) {
+//             const repoNames = res.data.map(function(repo) {
+//                 return repo.name;
+//             });
 
-            const repoNamesStr = repoNames.join("\n");
+//             const repoNamesStr = repoNames.join("\n");
 
-            fs.writeFile("repos.txt", repoNamesStr, function(err) {
-                if (err) {
-                    throw err;
-                }
+//             fs.writeFile("repos.txt", repoNamesStr, function(err) {
+//                 if (err) {
+//                     throw err;
+//                 }
 
-                console.log(`Saved ${repoNames.length} repos`);
-            });
-        });
-    });
+//                 console.log(`Saved ${repoNames.length} repos`);
+//             });
+//         });
+//     });
 userInputs();

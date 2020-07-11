@@ -1,66 +1,74 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-inquirer
-    .prompt([{
-            type: "input",
-            message: "Create project title?",
-            name: "title"
-        },
-        {
-            type: "input",
-            message: "what is the description?",
-            name: "description"
-        },
-        {
-            type: "input",
-            message: "What did you install?",
-            name: "install"
-        }, {
-            type: "input",
-            message: "Usage?",
-            name: "Usage"
-        }, {
-            type: "input",
-            message: "What type of license?",
-            name: "license"
-        }, {
-            type: "input",
-            message: "who contribute?",
-            name: "contributing"
-        }, {
-            type: "input",
-            message: "what tests?",
-            name: "test"
-        }, {
-            type: "input",
-            message: "Questions",
-            name: "Questions"
-        },
-    ]).then(function(data) {
-        console.log(data);
-        var generate = `
-  ## Project title: ${Response.title}
+const axios = require("axios")
+
+let questions = [{
+    type: "input",
+    message: "Create project title?",
+    name: "title"
+}, {
+    type: "input",
+    message: "what is the description?",
+    name: "description"
+}, {
+    type: "input",
+    message: "What did you install?",
+    name: "install"
+}, {
+    type: "input",
+    message: "Usage?",
+    name: "Usage"
+}, {
+    type: "list",
+    message: "Select license",
+    choices: ["YAY", "WOW", "MIT", "UCB"],
+    name: "license"
+}, {
+    type: "input",
+    message: "who contribute?",
+    name: "contributing"
+}, {
+    type: "input",
+    message: "what test?",
+    name: "test"
+}, {
+    type: "input",
+    message: "Questions",
+    name: "Questions"
+}]
+
+function userInputs() {
+    inquirer.prompt(questions)
+        .then((work) => {
+            console.log(work);
+            var generate = `
+        
+  ## Project title: ${work.title}
   
-  ## Description: ${Response.description}
+  ## Description: ${work.description}
   
   ### Table of Contents: 
-
-  ## Installation: ${Response.install}
-
-  ## Usage: ${Response.Usage}
-
-  ## License: ${Response.license}
-
-  ## Contributing: ${Response.Contributing}
-
-  ## Tests: ${Response.test}
+  
+  ## Installation: ${work.install}
+  
+  ## Usage: ${work.Usage}
+  
+  ## License: ${work.license}
+  
+  ## Contributing: ${work.contributing}
+  
+  ## Tests: ${work.test}
  
-  ## Questions: $(Response.Questions)
-  * User Github Profile email
-  * User Github email
-  `;
-    })
-fs.writeFile("readMe.md", generate, data, function(err) {
-            console.log("do i work)
+  ## Questions: ${work.Questions}
+ 
+ ![Powered By]https://img.shields.io/badge/NEWB-ITWORKED-brightgreen)
+        `
+            fs.writeFileSync("newReadme.md", generate, function() {
+                console.log("YOU BETTER WORK")
             })
+        })
+}
+
+
+userInputs();

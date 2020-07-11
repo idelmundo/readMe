@@ -103,7 +103,7 @@ function userInputs() {
 
   ![license](https://img.shields.io/badge/license-${work.license}-orange.svg)
         `
-            fs.writeFileSync("newReadme.md", generate, function() {
+            fs.writeFileSync("README.md", generate, function() {
                 console.log("YOU BETTER WORK")
             })
         })

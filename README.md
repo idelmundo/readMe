@@ -1,101 +1,51 @@
-# readMe
 
-# Unit 09 Node.js and ES6+ Homework: Good README Generator
+   
+  
+<iframe src="https://giphy.com/embed/llmt0NIRNKROwVs7SS" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/llmt0NIRNKROwVs7SS">via GIPHY</a></p>
+  
+  ## Table Of Contents
+  |   |       | |
+| ------------- |:-------------:| -----:|
+| [E-mail](#email)| [Project Title](#Project-title)| [Description](#description)|
+| [Installation](#installation)| [Usage](#usage)| [License](#license)|
+| [Contribute](#contribute)| [Tests](#tests)| [Questions](#questions)|
+  <hr>
 
-Create a command-line application that dynamically generates a README.md from a user's input. The application will be invoked with the following command:
+  ## Email 
+  idelmundo@68.com
+  <hr>
+      
+  ## Project title 
+  ReadMe genrator
+  <hr>
 
-```sh
-node index.js
-```
+  ## Description 
+  Here's a readme generator to help us talk about our projects.
+  <hr>
 
-The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
+  ## Installation 
+  Vs code and npm
+  <hr>
 
-The README will be populated with the following:
+  ## Usage 
+  J's
+  <hr>
 
-* At least one badge
-* Project title
-* Description
-* Table of Contents
-* Installation
-* Usage
-* License
-* Contributing
-* Tests
-* Questions
-  * User GitHub profile picture
-  * User GitHub email
+  ## License 
+  MIT
+  <hr>
 
-Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
+  ## Contribute
+  Isaias Del Mundo 
+  <hr>
 
-```
-AS A developer
+  ## Tests 
+  go to your terminal and go to readme.js they "node readme.js" this should prompt questions 
+  <hr>
 
-I WANT a README generator
+  ## Questions 
+  Feel free to contact me 
+  <hr>
 
-SO THAT I can easily put together a good README for a new project
-```
-
-Refer to the [Good README guide](../../01-HTML-Git-CSS/04-Supplemental/Good-README-Guide/README.md).
-
-## Business Context
-
-When creating an open source project on GitHub, it is important to have a quality README with information about the app--what is the app for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project. A command-line application will allow for quick and easy generation of a project README to get started quickly. This will allow a project creator to spend more time working on finishing the project and less time creating a good README.
-
-## Minimum Requirements
-
-* Functional, deployed application.
-
-* GitHub repository with a unique name and a README describing project.
-
-* The generated README includes the following sections: 
-  * Title
-  * Description
-  * Table of Contents
-  * Installation
-  * Usage
-  * License
-  * Contributing
-  * Tests
-  * Questions
-
-* The generated README includes 1 badge that's specific to the repository.
-
-```
-GIVEN the developer has a GitHub profile and a repository
-
-WHEN prompted for the developer's GitHub username and repo specific information
-
-THEN a README for the repo is generated
-```
-- - -
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your code base in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have more than 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* A video demonstrating the entirety of the app's functionality 
-
-* A generated README.md file for a project repo.
-
-* The URL of the GitHub repository
-
+  ![license](https://img.shields.io/badge/license-MIT-orange.svg)
+        

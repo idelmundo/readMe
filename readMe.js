@@ -8,7 +8,7 @@ let questions = [{
     },
     {
         type: "input",
-        message: "Enter URL Github profile",
+        message: "Enter URL Github profile picture ",
         name: "image"
     },
     {
@@ -17,7 +17,7 @@ let questions = [{
         name: "title"
     }, {
         type: "input",
-        message: "what is the description?",
+        message: "Enter description?",
         name: "description"
     }, {
         type: "input",
@@ -58,27 +58,49 @@ function userInputs() {
   <hr>
   
   ## Table Of Contents
-  1. [Email](##email)
+  |   |       | |
+| ------------- |:-------------:| -----:|
+| [E-mail](#email)| [Project Title](#Project-title)| [Description](#description)|
+| [Installation](#installation)| [Usage](#usage)| [License](#license)|
+| [Contribute](#contribute)| [Tests](#tests)| [Questions](#questions)|
   <hr>
 
-  ## Email: ${work.email}
-          
-  ## Project title: ${work.title}
-  
-  ## Description: ${work.description}
-  
-  ## Installation: ${work.install}
-  
-  ## Usage: ${work.Usage}
-  
-  ## License: ${work.license}
-  
-  ## Contributing: ${work.contributing}
-  
-  ## Tests: ${work.test}
- 
-  ## Questions: ${work.Questions}
- 
+  ## Email 
+  ${work.email}
+  <hr>
+      
+  ## Project title 
+  ${work.title}
+  <hr>
+
+  ## Description 
+  ${work.description}
+  <hr>
+
+  ## Installation 
+  ${work.install}
+  <hr>
+
+  ## Usage 
+  ${work.Usage}
+  <hr>
+
+  ## License 
+  ${work.license}
+  <hr>
+
+  ## Contribute
+  ${work.contributing}
+  <hr>
+
+  ## Tests 
+  ${work.test}
+  <hr>
+
+  ## Questions 
+  ${work.Questions}
+  <hr>
+
   ![license](https://img.shields.io/badge/license-${work.license}-orange.svg)
         `
             fs.writeFileSync("newReadme.md", generate, function() {

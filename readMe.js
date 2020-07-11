@@ -1,41 +1,51 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios = require("axios")
 
 let questions = [{
-    type: "input",
-    message: "Create project title?",
-    name: "title"
-}, {
-    type: "input",
-    message: "what is the description?",
-    name: "description"
-}, {
-    type: "input",
-    message: "What did you install?",
-    name: "install"
-}, {
-    type: "input",
-    message: "Usage?",
-    name: "Usage"
-}, {
-    type: "list",
-    message: "Select license",
-    choices: ["YAY", "WOW", "MIT", "UCB"],
-    name: "license"
-}, {
-    type: "input",
-    message: "who contribute?",
-    name: "contributing"
-}, {
-    type: "input",
-    message: "what test?",
-    name: "test"
-}, {
-    type: "input",
-    message: "Questions",
-    name: "Questions"
-}]
+        type: "input",
+        message: "Enter your Email address?",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "Enter URL Github profile",
+        name: "image"
+    },
+    {
+        type: "input",
+        message: "Create project title?",
+        name: "title"
+    }, {
+        type: "input",
+        message: "what is the description?",
+        name: "description"
+    }, {
+        type: "input",
+        message: "What did you install?",
+        name: "install"
+    }, {
+        type: "input",
+        message: "Usage?",
+        name: "Usage"
+    }, {
+        type: "list",
+        message: "Select license",
+        choices: ["YAY", "WOW", "MIT", "UCB"],
+        name: "license"
+    }, {
+        type: "input",
+        message: "who contribute?",
+        name: "contributing"
+    }, {
+        type: "input",
+        message: "what test?",
+        name: "test"
+    }, {
+        type: "input",
+        message: "Questions",
+        name: "Questions"
+    }
+]
 
 function userInputs() {
     inquirer.prompt(questions)
@@ -43,10 +53,17 @@ function userInputs() {
             console.log(work);
             var generate = `
    
-  ## Table Of Contents:* [Description](#description)
-  * [Installation](#installation)
-            
-  ### Project title: ${work.title}
+  <p>
+  <img src="${work.image}"width="250"/></p>
+  <hr>
+  
+  ## Table Of Contents
+  1. [Email](##email)
+  <hr>
+
+  ## Email: ${work.email}
+          
+  ## Project title: ${work.title}
   
   ## Description: ${work.description}
   
@@ -62,7 +79,7 @@ function userInputs() {
  
   ## Questions: ${work.Questions}
  
- ![Powered By]https://img.shields.io/badge/NEWB-ITWORKED-brightgreen)
+  ![license](https://img.shields.io/badge/license-${work.license}-orange.svg)
         `
             fs.writeFileSync("newReadme.md", generate, function() {
                 console.log("YOU BETTER WORK")
@@ -70,28 +87,4 @@ function userInputs() {
         })
 }
 
-// inquirer
-//     .prompt({
-//         message: "Enter your GitHub username:",
-//         name: "username"
-//     })
-//     .then(function({ username }) {
-//         const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-
-//         axios.get(queryUrl).then(function(res) {
-//             const repoNames = res.data.map(function(repo) {
-//                 return repo.name;
-//             });
-
-//             const repoNamesStr = repoNames.join("\n");
-
-//             fs.writeFile("repos.txt", repoNamesStr, function(err) {
-//                 if (err) {
-//                     throw err;
-//                 }
-
-//                 console.log(`Saved ${repoNames.length} repos`);
-//             });
-//         });
-//     });
 userInputs();

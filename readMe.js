@@ -30,7 +30,7 @@ let questions = [{
     }, {
         type: "list",
         message: "Select license",
-        choices: ["YAY", "WOW", "MIT", "UCB"],
+        choices: ["Apache", "Boost", "MIT", "Mozilla"],
         name: "license"
     }, {
         type: "input",
